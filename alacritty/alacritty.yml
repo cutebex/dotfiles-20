@@ -1,6 +1,3 @@
-# this is a comemnt
-# this is another comment
-
 window:
   padding:
     x: 10 
@@ -8,25 +5,28 @@ window:
   decorations: buttonless
   opacity: 1
   dynamic_title: false
+
 scrolling:
   history: 10000
   multiplier: 3
 
 font:
   normal:
-    family:  Hack Nerd Font
-    style: Regular
+    family: Liga SFMono Nerd Font
+    style: Light
   bold:
-    family:  Hack Nerd Font
-    style: Bold
-
+    family: Liga SFMono Nerd Font
+    style: Regular
   italic:
-    family:  Hack Nerd Font
-    style: Italic
+    family: Liga SFMono Nerd Font
+    style: Light Italic
+
   bold_italic:
-    family:  Hack Nerd Font
-    style: Bold Italic
+    family: Liga SFMono Nerd Font
+    style: Normal Italic
+
   size: 14
+
   offset:
     x: 1
     y: 1 
@@ -38,7 +38,7 @@ font:
 colors:
   primary:
     background: "0x191724"
-    foreground: "0xe0def4"
+    foreground: "#ffffff"
   cursor:
     text: "0x191724"
     cursor: "0x796268"
@@ -57,8 +57,8 @@ colors:
     green: "0x9ccfd8"
     yellow: "0xf6c177"
     blue: "0x31748f"
-    magenta: "0xc4a7e7"
-    cyan: "0xebbcba"
+    # magenta: "0xc4a7e7"
+    # cyan: "0xebbcba"
     white: "0xe0def4"
   bright:
     black: "0x6e6a86"
