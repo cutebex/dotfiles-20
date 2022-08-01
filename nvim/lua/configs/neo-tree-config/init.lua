@@ -167,3 +167,12 @@ neotree.setup({
 		},
 	},
 })
+
+local map = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
+
+map("n", "<leader>v", ":NeoTreeFocusToggle<CR>", opts)
+map("n", "<leader>V", ":NeoTreeFloatToggle<CR>", opts)
+map("n", "<leader>gS", ":Neotree float git_status<CR>", opts)
+map("n", "<leader>bs", ":Neotree buffers<CR>", opts)
+

@@ -10,16 +10,13 @@ return require("packer").startup(function()
 	use({ "catppuccin/nvim", as = "catppuccin" })
 	use("kyazdani42/nvim-web-devicons") -- optional, for file icon
 	use("nvim-lualine/lualine.nvim") --lualine/statusbar
+	use("norcalli/nvim-colorizer.lua") -- show colors on live based on color codes
 	use({
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v2.x",
+		"kyazdani42/nvim-tree.lua",
 		requires = {
-			"nvim-lua/plenary.nvim",
-			"kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
-			"MunifTanjim/nui.nvim",
+			"kyazdani42/nvim-web-devicons", -- optional, for file icons
 		},
 	})
-	use("norcalli/nvim-colorizer.lua") -- show colors on live based on color codes
 
 	-- Treesitter/Diagnostics/required by treessiter plugins
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) --treesitter

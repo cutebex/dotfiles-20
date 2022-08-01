@@ -73,11 +73,6 @@ map("n", "<leader>gp", ":Git push <CR>", opts)
 map("n", "<leader>gb", ":Git blame<CR>", opts)
 map("n", "<leader>gl", ":Git log<CR>", opts)
 
--- Neotree
-map("n", "<leader>v", ":NeoTreeFocusToggle<CR>", opts)
-map("n", "<leader>V", ":NeoTreeFloatToggle<CR>", opts)
-map("n", "<leader>gS", ":Neotree float git_status<CR>", opts)
-map("n", "<leader>bs", ":Neotree buffers<CR>", opts)
 
 -- Twilight
 map("n", "<leader>tw", ":Twilight<CR>", opts)
