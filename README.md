@@ -9,3 +9,6 @@
 - [X] Zshrc ->  Terminal Prompt
 - [X] Tmux -> Terminal Multiplexer
 - [X] Neovim -> PDE (Personal Development Environment)
+
+## Todo 
+- [ ] Installation scripts
