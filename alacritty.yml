@@ -18,17 +18,17 @@ font:
     family: Liga SFMono Nerd Font
     style: Regular
   italic:
-    family: Liga SFMono Nerd Font
+    family: Fira Code iScript
     style: Italic
 
   bold_italic:
-    family: Fira Code iScript
+    family: Liga SFMono Nerd Font
     style: Italic
 
   size: 14
 
   offset:
-    x: 1
+    x: 0
     y: 1 
   glyph_offset:
     y: 1
