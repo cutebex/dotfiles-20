@@ -7,7 +7,11 @@ tree.setup({
 	auto_reload_on_write = true,
 	diagnostics = { enable = true },
 	view = {
+		width = 25,
+		side = "left",
+		auto_resize = false,
 		adaptive_size = true,
+		hide_root_folder = true,
 		mappings = {
 			list = {
 				{ key = "u", action = "dir_up" },

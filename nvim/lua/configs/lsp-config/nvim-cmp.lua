@@ -69,21 +69,35 @@ if luasnip_ok and cmp_ok and lspkind_ok and vscode_ok then
 		}),
 
 		sources = {
-			{ name = 'cmp_tabnine' },
 			{ name = "buffer" },
 			{ name = "treesitter" },
 			{ name = "nvim_lsp" },
+			{ name = "cmp_tabnine" },
 			{ name = "path" },
 			{ name = "spell" },
+			{ name = "nvim_lua" },
 			{ name = "luasnip" },
 		},
 
 		formatting = {
 			fields = { "kind", "abbr", "menu" },
-			format = function(_, vim_item)
-				vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-				return vim_item
-			end,
+			-- format = function(_, vim_item)
+			-- 	vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+			-- 	return vim_item
+			-- end,
+			format = lspkind.cmp_format {
+				with_text =  true,
+				menu = {
+					buffer = "[buf]",
+					treesitter = "[tree]",
+					nvim_lsp = "[lsp]",
+					nvim_lua = "[lua]",
+					cmp_tabnine = "[tab9]",
+					path  = "[path]",
+					spell = "[spell]",
+					luasnip = "[snip]",
+				}
+			}
 		},
 		snippet = {
 			expand = function(args)
@@ -105,6 +119,10 @@ if luasnip_ok and cmp_ok and lspkind_ok and vscode_ok then
 			documentation = {
 				border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 			},
+		},
+		experimental = {
+			ghost_text = true,
+			native_menu = false
 		},
 	})
 end

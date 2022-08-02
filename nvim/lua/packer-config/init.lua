@@ -25,7 +25,7 @@ return require("packer").startup(function()
 	use("windwp/nvim-autopairs") -- autopair plugin eg: ()
 	use("Darazaki/indent-o-matic") --intelligent indent detection based on filetype
 	use("lukas-reineke/indent-blankline.nvim") -- block lines
-	use("p00f/nvim-ts-rainbow") -- colored closings
+	-- use("p00f/nvim-ts-rainbow") -- colored closings
 	use("numToStr/Comment.nvim") -- comment integration
 
 	-- Utils
