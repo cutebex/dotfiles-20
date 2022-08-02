@@ -47,3 +47,10 @@ local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
 map("n", "<leader>v", ":NvimTreeFindFileToggle<CR>", opts)
+
+local api = require("nvim-tree.api")
+local Event = require('nvim-tree.api').events.Event
+
+api.events.subscribe(Event.FileCreated, function(data)
+	vim.cmd("vsplit" .. data.fname)
+end)
