@@ -4,17 +4,43 @@ if not status_ok then
 end
 
 tree.setup({
+	hijack_cursor = true,
 	auto_reload_on_write = true,
-	diagnostics = { enable = true },
+	diagnostics = { enable = false },
+
 	actions = {
 		open_file = {
 			resize_window = true,
+		},
+	},
+	renderer = {
+		add_trailing = false,
+		group_empty = true,
+		highlight_git = false,
+		full_name = false,
+		highlight_opened_files = "none",
+		root_folder_modifier = ":~",
+		indent_markers = {
+			enable = true,
+			inline_arrows = true,
+			icons = {
+				corner = "└",
+				edge = "│",
+				item = "│",
+				none = " ",
+			},
+		},
+		icons = {
+			show = {
+				folder_arrow = false,
+			},
 		},
 	},
 	view = {
 		width = 25,
 		side = "left",
 		hide_root_folder = true,
+
 		mappings = {
 			list = {
 				{ key = "u", action = "dir_up" },
@@ -33,14 +59,14 @@ tree.setup({
 			},
 		},
 	},
-	log = {
-		enable = true,
-		truncate = true,
-		types = {
-			git = true,
-			profile = true,
-		},
-	},
+	-- log = {
+	-- 	enable = true,
+	-- 	truncate = true,
+	-- 	types = {
+	-- 		git = true,
+	-- 		profile = true,
+	-- 	},
+	-- },
 	filters = {
 		dotfiles = true,
 	},
