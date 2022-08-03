@@ -17,6 +17,15 @@ return require("packer").startup(function()
 			"kyazdani42/nvim-web-devicons", -- optional, for file icons
 		},
 	})
+	-- use({
+	-- 	"nvim-neo-tree/neo-tree.nvim",
+	-- 	branch = "v2.x",
+	-- 	requires = {
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
+	-- 		"MunifTanjim/nui.nvim",
+	-- 	},
+	-- })
 
 	-- Treesitter/Diagnostics/required by treessiter plugins
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) --treesitter

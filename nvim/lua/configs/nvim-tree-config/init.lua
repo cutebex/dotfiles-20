@@ -6,11 +6,14 @@ end
 tree.setup({
 	auto_reload_on_write = true,
 	diagnostics = { enable = true },
+	actions = {
+		open_file = {
+			resize_window = true,
+		},
+	},
 	view = {
 		width = 25,
 		side = "left",
-		-- auto_resize = false,
-		adaptive_size = true,
 		hide_root_folder = true,
 		mappings = {
 			list = {
@@ -49,7 +52,7 @@ local opts = { noremap = true, silent = true }
 map("n", "<leader>v", ":NvimTreeFindFileToggle<CR>", opts)
 
 local api = require("nvim-tree.api")
-local Event = require('nvim-tree.api').events.Event
+local Event = require("nvim-tree.api").events.Event
 
 api.events.subscribe(Event.FileCreated, function(data)
 	vim.cmd("tabnew" .. data.fname)

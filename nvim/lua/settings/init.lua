@@ -10,6 +10,7 @@ set.incsearch = true
 set.number = true
 set.relativenumber = true
 set.splitbelow = true
+set.splitright = true
 set.ruler = false
 set.laststatus = 2
 set.foldmethod = "indent"
