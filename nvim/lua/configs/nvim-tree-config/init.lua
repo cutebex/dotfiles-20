@@ -9,7 +9,7 @@ tree.setup({
 	view = {
 		width = 25,
 		side = "left",
-		auto_resize = false,
+		-- auto_resize = false,
 		adaptive_size = true,
 		hide_root_folder = true,
 		mappings = {

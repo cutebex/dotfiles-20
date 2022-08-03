@@ -28,9 +28,8 @@ for _, source in ipairs({
 	"configs.null-ls-config",
 	"configs.nvim-lsp-installer",
 	"configs.comment",
-	-- "configs.autosave-config", 
 	"configs.twilight-config", 
-	"configs.zenmode-config"
+	"configs.zenmode-config", 
 }) do
 	local status_ok, fault = pcall(require, source)
 	if not status_ok then

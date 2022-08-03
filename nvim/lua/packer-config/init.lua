@@ -25,7 +25,6 @@ return require("packer").startup(function()
 	use("windwp/nvim-autopairs") -- autopair plugin eg: ()
 	use("Darazaki/indent-o-matic") --intelligent indent detection based on filetype
 	use("lukas-reineke/indent-blankline.nvim") -- block lines
-	-- use("p00f/nvim-ts-rainbow") -- colored closings
 	use("numToStr/Comment.nvim") -- comment integration
 
 	-- Utils
@@ -38,7 +37,6 @@ return require("packer").startup(function()
 	use("stevearc/aerial.nvim") -- code outline plugin, handy in large files
 	use("mattn/emmet-vim") --emmet html and css
 	use("tpope/vim-fugitive") --git integration
-	-- use("Pocco81/AutoSave.nvim") --autosave
 	use("folke/zen-mode.nvim") -- Zenmode
 	use("folke/twilight.nvim") -- dims inactive portions of code
 

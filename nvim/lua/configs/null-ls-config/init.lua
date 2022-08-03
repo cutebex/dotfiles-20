@@ -9,10 +9,9 @@ local sources = {
 	--null_ls.builtins.diagnostics.eslint,
 	formatting.autopep8,
 	formatting.stylua,
-	formatting.prettier.with({extra_args = {"--no-semi", "--no-single-quote"}}),
+	formatting.prettier.with({ extra_args = { "--no-semi" } }),
 	formatting.rubocop,
 }
-
 
 null_ls.setup({
 	sources = sources,
