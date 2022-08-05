@@ -17,6 +17,9 @@ return require("packer").startup(function()
 			"kyazdani42/nvim-web-devicons", -- optional, for file icons
 		},
 	})
+	use({ "NTBBloodbath/rest.nvim", requires = {
+		"nvim-lua/plenary.nvim",
+	} })
 	-- use({
 	-- 	"nvim-neo-tree/neo-tree.nvim",
 	-- 	branch = "v2.x",
@@ -37,6 +40,7 @@ return require("packer").startup(function()
 	use("numToStr/Comment.nvim") -- comment integration
 
 	-- Utils
+	use({ "jdhao/better-escape.vim", event = "InsertEnter" })
 	use("ggandor/lightspeed.nvim") -- search tool
 	use("lewis6991/gitsigns.nvim") -- git signs on signcolumn
 	use("seblj/nvim-tabline") -- enable tabs

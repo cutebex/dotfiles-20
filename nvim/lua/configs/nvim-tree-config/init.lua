@@ -81,5 +81,5 @@ local api = require("nvim-tree.api")
 local Event = require("nvim-tree.api").events.Event
 
 api.events.subscribe(Event.FileCreated, function(data)
-	vim.cmd("tabnew" .. data.fname)
+	vim.cmd("vsplit" .. data.fname)
 end)

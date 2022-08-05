@@ -26,7 +26,7 @@ map("n", "<C-S-Down>", ":resize -3<CR>", opts)
 map("n", "<C-S-UP>", ":resize +3<CR>", opts)
 
 -- remap
-map("i", "jj", "<Esc>", {})
+-- map("i", "jj", "<Esc>", {})
 
 --"split navigations
 map("n", "<C-J>", "<C-W><C-J>", {})
