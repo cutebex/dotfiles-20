@@ -48,6 +48,7 @@ alias volup='pactl -- set-sink-volume 0 +10%'
 alias voldown='pactl -- set-sink-volume 0 -10%'
 alias tmuxn="tmux new -s"
 alias a="tmux attach -t"
+alias attach="tmux attach -t"
 alias killtmux="pkill -f tmux"
 alias weather="curl wttr.in"
 alias bxt_staging='ssh -v -i ~/Fetchly/pems/Fetchly-Sci.pem ec2-user@ec2-34-222-81-24.us-west-2.compute.amazonaws.com'
@@ -64,3 +65,6 @@ alias edit_zsh="nvim ~/.zshrc"
 alias edit_drops="cd ~/workspace/fetch.ly/drops-dashboard && tmuxn drops"
 alias edit_api_campus="cd ~/workspace/fetch.ly/api.campuslegends.com && nvim ."
 alias edit_campus="cd ~/workspace/fetch.ly/campus-legends-react-app && nvim ."
+alias dbuild="COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose build"
+alias dup="docker-compose up"
+alias gty="git commit --date='1 day ago' -m 'Your commit message'"
