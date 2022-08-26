@@ -7,7 +7,6 @@ return require("packer").startup(function()
 
 	-- Themings/icons/beautify/Customizing
 	use("EdenEast/nightfox.nvim") -- theme
-	use({ "catppuccin/nvim", as = "catppuccin" })
 	use("kyazdani42/nvim-web-devicons") -- optional, for file icon
 	use("nvim-lualine/lualine.nvim") --lualine/statusbar
 	use("norcalli/nvim-colorizer.lua") -- show colors on live based on color codes
@@ -52,6 +51,12 @@ return require("packer").startup(function()
 	use("tpope/vim-fugitive") --git integration
 	use("folke/zen-mode.nvim") -- Zenmode
 	use("folke/twilight.nvim") -- dims inactive portions of code
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	})
 
 	-- LSP
 	use("williamboman/nvim-lsp-installer")
@@ -61,6 +66,8 @@ return require("packer").startup(function()
 		branch = "main",
 	})
 	use("jose-elias-alvarez/null-ls.nvim") --plugin for formatting
+	use("williamboman/mason.nvim")
+	use("williamboman/mason-lspconfig.nvim")
 
 	-- Autocompletion
 	use("hrsh7th/nvim-cmp") -- Autocompletion plugin
@@ -69,5 +76,4 @@ return require("packer").startup(function()
 	use("saadparwaiz1/cmp_luasnip") -- Snippets source for nvim-cmp
 	use("L3MON4D3/LuaSnip") -- Snippets plugin
 	use("onsails/lspkind.nvim") -- icons on completion like vscode
-	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" }) -- Tabnine
 end)

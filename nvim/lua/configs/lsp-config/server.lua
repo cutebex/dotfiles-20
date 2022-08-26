@@ -1,6 +1,19 @@
 local lsp_ok, lspconfig = pcall(require, "lspconfig")
 local cmp_ok, cmp_cap = pcall(require, "cmp_nvim_lsp")
 local aerial_ok, aerial = pcall(require, "aerial")
+local status, mason = pcall(require, "mason")
+if (not status) then return end
+local status2, masonconfig = pcall(require, "mason-lspconfig")
+if (not status2) then return end
+
+mason.setup({
+
+})
+
+masonconfig.setup {
+  ensure_installed = { "sumneko_lua", "tailwindcss" },
+}
+
 
 if not lsp_ok then
 	return
@@ -75,6 +88,7 @@ lspconfig["tsserver"].setup({
 	capabilities = capabilities,
 	flags = lsp_flags,
 })
+lspconfig["tailwindcss"].setup({})
 lspconfig.vimls.setup({
 	on_attach = aerial.on_attach,
 })

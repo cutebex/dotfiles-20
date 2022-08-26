@@ -116,9 +116,6 @@ map("n", "<C-b>", function()
 	action.smart_scroll_with_saga(-1)
 end, { silent = true })
 
-local signature = require("lspsaga.signaturehelp")
-map("n", "<C-k>", signature.signature_help, { silent = true,noremap = true})
-
 local definition = require("lspsaga.definition")
 map("n", "<leader>pd", definition.preview_definition, { silent = true,noremap = true })
 

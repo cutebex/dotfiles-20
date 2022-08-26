@@ -69,10 +69,9 @@ if luasnip_ok and cmp_ok and lspkind_ok and vscode_ok then
 		}),
 
 		sources = {
+			{ name = "nvim_lsp" },
 			{ name = "buffer" },
 			{ name = "treesitter" },
-			{ name = "nvim_lsp" },
-			{ name = "cmp_tabnine" },
 			{ name = "path" },
 			{ name = "spell" },
 			{ name = "nvim_lua" },
@@ -85,19 +84,18 @@ if luasnip_ok and cmp_ok and lspkind_ok and vscode_ok then
 			-- 	vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
 			-- 	return vim_item
 			-- end,
-			format = lspkind.cmp_format {
-				with_text =  true,
+			format = lspkind.cmp_format({
+				with_text = true,
 				menu = {
 					buffer = "[buf]",
 					treesitter = "[tree]",
 					nvim_lsp = "[lsp]",
 					nvim_lua = "[lua]",
-					cmp_tabnine = "[tab9]",
-					path  = "[path]",
+					path = "[path]",
 					spell = "[spell]",
 					luasnip = "[snip]",
-				}
-			}
+				},
+			}),
 		},
 		snippet = {
 			expand = function(args)
@@ -107,7 +105,6 @@ if luasnip_ok and cmp_ok and lspkind_ok and vscode_ok then
 		duplicates = {
 			nvim_lsp = 1,
 			luasnip = 1,
-			cmp_tabnine = 1,
 			buffer = 1,
 			path = 1,
 		},
@@ -122,7 +119,7 @@ if luasnip_ok and cmp_ok and lspkind_ok and vscode_ok then
 		},
 		experimental = {
 			ghost_text = true,
-			native_menu = false
+			native_menu = false,
 		},
 	})
 end

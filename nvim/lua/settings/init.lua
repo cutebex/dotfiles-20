@@ -15,7 +15,6 @@ set.ruler = false
 set.laststatus = 2
 set.foldmethod = "indent"
 set.guifont = "Hack Nerd Font:h14"
-set.spell.spelllang = "en_us"
 --set.foldmethod = "expr"
 --set.foldexpr = "nvim_treesitter#foldexpr()"
 
@@ -63,6 +62,7 @@ vim.cmd([[
 ]])
 vim.g.user_emmet_leader_key = ","
 vim.g.better_escape_shortcut='jj'
+vim.g.better_escape_interval = 200
 
 function _G.set_terminal_keymaps()
 	local opts = { noremap = true }

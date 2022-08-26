@@ -91,11 +91,6 @@ _G.packer_plugins = {
     path = "/Users/umschaudhary/.local/share/nvim/site/pack/packer/opt/better-escape.vim",
     url = "https://github.com/jdhao/better-escape.vim"
   },
-  catppuccin = {
-    loaded = true,
-    path = "/Users/umschaudhary/.local/share/nvim/site/pack/packer/start/catppuccin",
-    url = "https://github.com/catppuccin/nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/umschaudhary/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -105,11 +100,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/umschaudhary/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
-  },
-  ["cmp-tabnine"] = {
-    loaded = true,
-    path = "/Users/umschaudhary/.local/share/nvim/site/pack/packer/start/cmp-tabnine",
-    url = "https://github.com/tzachar/cmp-tabnine"
   },
   cmp_luasnip = {
     loaded = true,
@@ -160,6 +150,21 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/umschaudhary/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["markdown-preview.nvim"] = {
+    loaded = true,
+    path = "/Users/umschaudhary/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
+  },
+  ["mason-lspconfig.nvim"] = {
+    loaded = true,
+    path = "/Users/umschaudhary/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim"
+  },
+  ["mason.nvim"] = {
+    loaded = true,
+    path = "/Users/umschaudhary/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
   },
   ["nightfox.nvim"] = {
     loaded = true,

@@ -4,7 +4,20 @@ if not status_ok then
 end
 
 treesitter.setup({
-	ensure_installed = { "python", "lua", "ruby", "typescript", "javascript" , "http", "json"},
+	ensure_installed = {
+		"python",
+		"lua",
+		"ruby",
+		"typescript",
+		"javascript",
+		"http",
+		"json",
+		"tsx",
+		"json",
+		"yaml",
+		"css",
+		"html",
+	},
 	--ignore_install = { "php", "phpdoc" },
 	sync_install = false,
 	auto_install = true,
