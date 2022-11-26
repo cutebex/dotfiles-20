@@ -30,7 +30,7 @@ for _, source in ipairs({
 	"configs.comment",
 	"configs.twilight-config", 
 	"configs.zenmode-config", 
-	"configs.rest-config", 
+	-- "configs.rest-config", 
 	"configs.better-escape-config", 
 }) do
 	local status_ok, fault = pcall(require, source)

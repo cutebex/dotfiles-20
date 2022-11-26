@@ -14,4 +14,7 @@ Indent.setup({
 
 	-- Skip multi-line comments and strings (more accurate detection but less performant)
 	skip_multiline = true,
+	filetype_ = {
+		standard_widths = { 2 },
+	}
 })

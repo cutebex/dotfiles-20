@@ -16,9 +16,9 @@ return require("packer").startup(function()
 			"kyazdani42/nvim-web-devicons", -- optional, for file icons
 		},
 	})
-	use({ "NTBBloodbath/rest.nvim", requires = {
-		"nvim-lua/plenary.nvim",
-	} })
+	-- use({ "NTBBloodbath/rest.nvim", requires = {
+	-- 	"nvim-lua/plenary.nvim",
+	-- } })
 	-- use({
 	-- 	"nvim-neo-tree/neo-tree.nvim",
 	-- 	branch = "v2.x",
@@ -43,14 +43,14 @@ return require("packer").startup(function()
 	use("ggandor/lightspeed.nvim") -- search tool
 	use("lewis6991/gitsigns.nvim") -- git signs on signcolumn
 	use("seblj/nvim-tabline") -- enable tabs
-	use({ "akinsho/toggleterm.nvim", tag = "v1.*" }) -- toggle term
+	use({ "akinsho/toggleterm.nvim", tag = "*" }) -- toggle term
 	use({ "nvim-telescope/telescope.nvim", requires = { { "nvim-lua/plenary.nvim" } } }) --project wise search
 	use("ur4ltz/surround.nvim") -- surrounding , parenthesis, brackets, quotes etc
 	use("stevearc/aerial.nvim") -- code outline plugin, handy in large files
 	use("mattn/emmet-vim") --emmet html and css
 	use("tpope/vim-fugitive") --git integration
 	use("folke/zen-mode.nvim") -- Zenmode
-	use("folke/twilight.nvim") -- dims inactive portions of code
+	-- use("folke/twilight.nvim") -- dims inactive portions of code
 	use({
 		"iamcco/markdown-preview.nvim",
 		run = function()
@@ -61,11 +61,12 @@ return require("packer").startup(function()
 	-- LSP
 	use("williamboman/nvim-lsp-installer")
 	use("neovim/nvim-lspconfig") -- Configurations for Nvim LSP
+	use("jose-elias-alvarez/nvim-lsp-ts-utils")
 	use({
 		"glepnir/lspsaga.nvim",
 		branch = "main",
 	})
-	use("jose-elias-alvarez/null-ls.nvim") --plugin for formatting
+	use({"jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim" },}) --plugin for formatting
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
 

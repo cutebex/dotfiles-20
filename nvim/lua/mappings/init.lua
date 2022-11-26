@@ -54,7 +54,8 @@ map("n", "<leader>tt", ":ToggleTerm direction=float<CR>", opts)
 map("n", "<leader>th", ":ToggleTerm direction=horizontal<CR>", opts)
 map("n", "<leader>tv", ":ToggleTerm direction=vertical<CR>", opts)
 -- formatter
-map("n", "<leader>pp", ":lua vim.lsp.buf.formatting_sync(nil, 10000000)<CR>", opts)
+map("n", "<leader>pp", ":lua vim.lsp.buf.format()<CR>", opts)
+vim.lsp.buf.format({ async = true })
 
 -- buffer
 map("n", "<leader>bd", ":bdelete<CR>", opts)
@@ -72,6 +73,5 @@ map("n", "<leader>gp", ":Git push <CR>", opts)
 map("n", "<leader>gb", ":Git blame<CR>", opts)
 map("n", "<leader>gl", ":Git log<CR>", opts)
 
-
 -- Twilight
-map("n", "<leader>tw", ":Twilight<CR>", opts)
+-- map("n", "<leader>tw", ":Twilight<CR>", opts)

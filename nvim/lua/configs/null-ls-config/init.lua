@@ -3,15 +3,16 @@ if not status_ok then
 	return
 end
 
-local formatting = null_ls.builtins.formatting
+local formatting =  null_ls.builtins.formatting
 
 local sources = {
-	--null_ls.builtins.diagnostics.eslint,
+	-- formatting.eslint, 
 	formatting.autopep8,
 	formatting.stylua,
-	formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
+	-- formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
 	formatting.rubocop,
 }
+
 
 null_ls.setup({
 	sources = sources,

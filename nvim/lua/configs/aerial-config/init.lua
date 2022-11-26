@@ -6,9 +6,10 @@ end
 local map = vim.api.nvim_buf_set_keymap
 
 Aerial.setup({
-	close_behavior = "global",
 	backends = { "lsp", "treesitter", "markdown" },
-	min_width = 28,
+	layout = {
+		min_width = 28,
+	},
 	show_guides = true,
 	filter_kind = false,
 	icons = {

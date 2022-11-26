@@ -3,6 +3,7 @@ if not status_ok then
 	return
 end
 
+
 tree.setup({
 	hijack_cursor = true,
 	auto_reload_on_write = true,
@@ -20,6 +21,7 @@ tree.setup({
 		full_name = false,
 		highlight_opened_files = "none",
 		root_folder_modifier = ":~",
+
 		indent_markers = {
 			enable = true,
 			inline_arrows = true,

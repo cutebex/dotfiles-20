@@ -10,13 +10,7 @@ treesitter.setup({
 		"ruby",
 		"typescript",
 		"javascript",
-		"http",
-		"json",
-		"tsx",
-		"json",
-		"yaml",
-		"css",
-		"html",
+		"dart"
 	},
 	--ignore_install = { "php", "phpdoc" },
 	sync_install = false,
@@ -26,6 +20,7 @@ treesitter.setup({
 	},
 	highlight = {
 		enable = true,
+		use_languagetree = true,
 		additional_vim_regex_highlighting = false,
 	},
 	context_commentstring = {

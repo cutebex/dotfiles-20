@@ -79,4 +79,6 @@ vim.cmd([[
 ]])
 vim.cmd([[
   autocmd! FileType * set formatoptions-=cro
+  autocmd BufRead,BufNewFile *.ts,*.tsx,*.js,*jsx  setlocal tabstop=2 shiftwidth=2 softtabstop=2
 ]])
+
