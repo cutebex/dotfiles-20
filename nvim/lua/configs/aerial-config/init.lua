@@ -53,7 +53,5 @@ Aerial.setup({
 		map(bufnr, "n", "{", "<cmd>AerialPrev<CR>", {})
 		map(bufnr, "n", "}", "<cmd>AerialNext<CR>", {})
 		-- Jump up the tree with '[[' or ']]'
-		map(bufnr, "n", "[[", "<cmd>AerialPrevUp<CR>", {})
-		map(bufnr, "n", "]]", "<cmd>AerialNextUp<CR>", {})
 	end,
 })

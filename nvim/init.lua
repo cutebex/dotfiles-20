@@ -32,6 +32,7 @@ for _, source in ipairs({
 	"configs.better-escape-config",
 	"configs.telescope",
 	"configs.flutter",
+	"configs.neoclip",
 }) do
 	local status_ok, fault = pcall(require, source)
 	if not status_ok then

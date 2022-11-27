@@ -16,8 +16,9 @@ map("n", "<leader>fm", ":Telescope marks<CR>", opts) -- search marks
 map("n", "<leader>fo", ":Telescope oldfiles<CR>", opts) -- search history
 map("n", "<leader>fC", ":Telescope grep_string<CR>", opts) -- search under cursor
 map("n", "<leader>fk", ":Telescope keymaps<CR>", opts) -- search key maps
-map("n", "<leader>fM", ":Telescope commands<CR>", opts) -- search key maps
-map("n", "<leader>ft", ":Telescope flutter commands<CR>", opts) -- search key maps
+map("n", "<leader>fM", ":Telescope commands<CR>", opts) -- search all commands
+map("n", "<leader>ft", ":Telescope flutter commands<CR>", opts) -- flutter commands
+map("n", "<leader>fn", ":Telescope neoclip<CR>", opts) -- neoclip
 
 -- split
 map("n", "<C-S-Left>", ":vertical resize +15<CR>", opts)

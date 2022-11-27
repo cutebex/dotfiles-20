@@ -5,7 +5,7 @@ local g = vim.g
 
 g.mapleader = ","
 g.user_emmet_leader_key = ","
-g.better_escape_shortcut='jj'
+g.better_escape_shortcut = "jj"
 g.better_escape_interval = 200
 
 -- opt.background = "dark"
@@ -27,9 +27,9 @@ opt.splitright = true
 opt.laststatus = 2
 opt.showmode = false
 
-opt.shortmess:append "sI"
+opt.shortmess:append("sI")
 
--- opt.guifont = "Hack Nerd Font:h14"
+opt.guifont = "Hack Nerd Font:h14"
 --set.foldmethod = "expr"
 --set.foldexpr = "nvim_treesitter#foldexpr()"
 
@@ -59,7 +59,6 @@ opt.linebreak = true
 opt.showbreak = "↳"
 opt.list = true
 
-
 -- set cmdheight=2
 opt.updatetime = 1000
 -- Don't pass messages to |ins-completion-menu|.
@@ -87,50 +86,48 @@ vim.cmd([[
   filetype plugin on
 ]])
 
-
 -- disable some builtin vim plugins
 local default_plugins = {
-  "2html_plugin",
-  "getscript",
-  "getscriptPlugin",
-  "gzip",
-  "logipat",
-  "netrw",
-  "netrwPlugin",
-  "netrwSettings",
-  "netrwFileHandlers",
-  "matchit",
-  "tar",
-  "tarPlugin",
-  "rrhelper",
-  "spellfile_plugin",
-  "vimball",
-  "vimballPlugin",
-  "zip",
-  "zipPlugin",
-  "tutor",
-  "rplugin",
-  "syntax",
-  "synmenu",
-  "optwin",
-  "compiler",
-  "bugreport",
-  "ftplugin",
+	"2html_plugin",
+	"getscript",
+	"getscriptPlugin",
+	"gzip",
+	"logipat",
+	"netrw",
+	"netrwPlugin",
+	"netrwSettings",
+	"netrwFileHandlers",
+	"matchit",
+	"tar",
+	"tarPlugin",
+	"rrhelper",
+	"spellfile_plugin",
+	"vimball",
+	"vimballPlugin",
+	"zip",
+	"zipPlugin",
+	"tutor",
+	"rplugin",
+	"syntax",
+	"synmenu",
+	"optwin",
+	"compiler",
+	"bugreport",
+	"ftplugin",
 }
 
 for _, plugin in pairs(default_plugins) do
-  g["loaded_" .. plugin] = 1
+	g["loaded_" .. plugin] = 1
 end
 
-
 local default_providers = {
-  "node",
-  "perl",
-  "python3",
-  "ruby",
-  "dart"
+	"node",
+	"perl",
+	"python3",
+	"ruby",
+	"dart",
 }
 
 for _, provider in ipairs(default_providers) do
-  g["loaded_" .. provider .. "_provider"] = 0
+	g["loaded_" .. provider .. "_provider"] = 0
 end

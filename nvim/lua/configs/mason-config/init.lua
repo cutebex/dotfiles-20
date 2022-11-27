@@ -8,15 +8,15 @@ if not status2 then
 end
 
 mason.setup({
-    ui = {
-        icons = {
-            package_installed = "✓",
-            package_pending = "➜",
-            package_uninstalled = "✗"
-        }
-    }
+	ui = {
+		icons = {
+			package_installed = "✓",
+			package_pending = "➜",
+			package_uninstalled = "✗",
+		},
+	},
 })
 
 masonconfig.setup({
-	ensure_installed = { "sumneko_lua", "tailwindcss" , "dartls"},
+	ensure_installed = { "sumneko_lua", "tailwindcss" },
 })

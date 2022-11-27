@@ -35,6 +35,13 @@ return require("packer").startup(function()
 	use("lukas-reineke/indent-blankline.nvim") -- block lines
 	use("numToStr/Comment.nvim") -- comment integration
 	use("JoosepAlviste/nvim-ts-context-commentstring")
+	use("nvim-treesitter/nvim-treesitter-textobjects")
+	use({
+		"ruifm/gitlinker.nvim",
+		config = function()
+			require("gitlinker").setup()
+		end,
+	})
 
 	-- Utils
 	use({ "jdhao/better-escape.vim", event = "InsertEnter" })
@@ -49,6 +56,19 @@ return require("packer").startup(function()
 	use("tpope/vim-fugitive") --git integration
 	use("folke/zen-mode.nvim") -- Zenmode
 	-- use("folke/twilight.nvim") -- dims inactive portions of code
+	use({
+		"AckslD/nvim-neoclip.lua",
+		requires = {
+			{ "kkharji/sqlite.lua", module = "sqlite" },
+		},
+	})
+	use({
+		"chentoast/marks.nvim",
+		event = "BufReadPre",
+		config = function()
+			require("marks").setup({})
+		end,
+	})
 
 	-- LSP
 	use("neovim/nvim-lspconfig") -- Configurations for Nvim LSP
@@ -70,6 +90,5 @@ return require("packer").startup(function()
 	use("onsails/lspkind.nvim") -- icons on completion like vscode
 
 	-- flutter setup
-	use {'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim'}
-
+	use({ "akinsho/flutter-tools.nvim", requires = "nvim-lua/plenary.nvim" })
 end)

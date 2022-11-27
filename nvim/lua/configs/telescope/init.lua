@@ -16,7 +16,6 @@ local nvb_actions = transform_mod({
 		vim.fn.setreg("+", full_path)
 
 		-- Close the popup
-		require("utils").info("File path is yanked ")
 		require("telescope.actions").close(prompt_bufnr)
 	end,
 })
@@ -24,7 +23,7 @@ local nvb_actions = transform_mod({
 telescope.setup({
 	defaults = {
 		selection_caret = " ",
-		-- path_display = { "smart" },
+		path_display = { "smart" },
 		mappings = {
 			i = {
 				["<C-j>"] = actions.move_selection_next,
@@ -39,49 +38,35 @@ telescope.setup({
 		},
 	},
 	pickers = {
+		live_grep = {
+			theme = "ivy",
+			hidden = false,
+			mappings = {
+				i = {
+					["<C-y>"] = nvb_actions.file_path,
+				},
+			},
+		},
+		grep_string = {
+			theme = "ivy",
+			hidden = false,
+			mappings = {
+				i = {
+					["<C-y>"] = nvb_actions.file_path,
+				},
+			},
+		},
 		find_files = {
 			theme = "ivy",
 			mappings = {
-				n = {
-					["y"] = nvb_actions.file_path,
-				},
 				i = {
 					["<C-y>"] = nvb_actions.file_path,
 				},
 			},
-			hidden = true,
-		},
-		git_files = {
-			theme = "dropdown",
-			mappings = {
-				n = {
-					["y"] = nvb_actions.file_path,
-				},
-				i = {
-					["<C-y>"] = nvb_actions.file_path,
-				},
-			},
-		},
-	},
-	extensions = {
-		arecibo = {
-			["selected_engine"] = "google",
-			["url_open_command"] = "xdg-open",
-			["show_http_headers"] = false,
-			["show_domain_icons"] = false,
-		},
-		media_files = {
-			filetypes = { "png", "webp", "jpg", "jpeg", "pdf", "mp4", "webm" },
-			find_cmd = "fd",
-		},
-		bookmarks = {
-			selected_browser = "brave",
-			url_open_command = nil,
-			url_open_plugin = "open_browser",
-			full_path = true,
-			firefox_profile_name = nil,
+			hidden = false,
 		},
 	},
 })
 
 require("telescope").load_extension("flutter") -- Flutter
+require("telescope").load_extension("neoclip") -- Neoclip

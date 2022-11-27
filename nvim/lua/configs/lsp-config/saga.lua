@@ -80,7 +80,7 @@ saga.init_lsp_saga({
 		in_custom = false,
 		enable = true,
 		separator = " ",
-		show_file = true,
+		show_file = false,
 		-- define how to customize filename, eg: %:., %
 		-- if not set, use default value `%:t`
 		-- more information see `vim.fn.expand` or `expand`
@@ -95,12 +95,12 @@ saga.init_lsp_saga({
 		-- defx, db_ui
 		win_with = "",
 		win_width = 30,
-		auto_enter = true,
-		auto_preview = true,
+		auto_enter = false,
+		auto_preview = false,
 		virt_text = "┃",
-		jump_key = "o",
+		jump_key = "<enter>",
 		-- auto refresh when change buffer
-		auto_refresh = true,
+		auto_refresh = false,
 	},
 	-- custom lsp kind
 	-- usage { Field = 'color code'} or {Field = {your icon, your color code}}
