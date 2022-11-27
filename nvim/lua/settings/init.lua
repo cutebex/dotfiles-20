@@ -1,84 +1,135 @@
 ---------------- General Settings ------------------
 
-local set = vim.opt
+local opt = vim.opt
+local g = vim.g
 
-vim.g.mapleader = ","
-set.background = "dark"
-set.showmatch = true
-set.hlsearch = true
-set.incsearch = true
-set.number = true
-set.relativenumber = true
-set.splitbelow = true
-set.splitright = true
-set.ruler = false
-set.laststatus = 2
-set.foldmethod = "indent"
-set.guifont = "Hack Nerd Font:h14"
+g.mapleader = ","
+g.user_emmet_leader_key = ","
+g.better_escape_shortcut='jj'
+g.better_escape_interval = 200
+
+-- opt.background = "dark"
+-- opt.showmatch = true
+-- opt.hlsearch = true
+-- opt.incsearch = true
+--
+opt.ruler = false
+opt.number = true
+opt.numberwidth = 2
+opt.relativenumber = true
+
+opt.foldmethod = "indent"
+opt.foldlevel = 99
+
+opt.splitbelow = true
+opt.splitright = true
+
+opt.laststatus = 2
+opt.showmode = false
+
+opt.shortmess:append "sI"
+
+-- opt.guifont = "Hack Nerd Font:h14"
 --set.foldmethod = "expr"
 --set.foldexpr = "nvim_treesitter#foldexpr()"
 
-set.foldlevel = 99
-set.encoding = "UTF-8"
+opt.encoding = "UTF-8"
+
+opt.termguicolors = true
 
 -- TextEdit might fail if hidden is not set.
-set.hidden = true
-set.backup = false
-set.writebackup = false
-set.cursorline = true
-set.spelllang = "en_us"
-set.list = true
-set.termguicolors = true
+opt.hidden = true
+opt.backup = false
+opt.writebackup = false
+opt.cursorline = true
+
+opt.spelllang = "en_us"
+opt.list = true
+
+-- Indenting
+opt.expandtab = true
+opt.shiftwidth = 2
+opt.smartindent = true
+opt.tabstop = 2
+opt.softtabstop = 2
 
 -- wrap lines visually
-set.wrap = false
-set.linebreak = true
-set.showbreak = "↳"
+opt.wrap = false
+opt.linebreak = true
+opt.showbreak = "↳"
+opt.list = true
+
 
 -- set cmdheight=2
-set.updatetime = 1000
+opt.updatetime = 1000
 -- Don't pass messages to |ins-completion-menu|.
 
 -- diagnostics appear/become resolved.
-set.signcolumn = "yes"
-set.swapfile = false
-set.scrolloff = 5
-set.clipboard = "unnamedplus"
+opt.signcolumn = "yes"
+opt.swapfile = false
+opt.scrolloff = 5
+opt.clipboard = "unnamedplus"
 
-set.mouse = "a"
+opt.mouse = "a"
 
-set.cinoptions = { "g0", "l1", i0 }
-set.backspace = { "indent", "eol", "start" }
+-- opt.cinoptions = { "g0", "l1", i0 }
+-- opt.backspace = { "indent", "eol", "start" }
 
 -- set.listchars = {tab = '▸', trail = '▫', nbsp = "_", extends = "»", precedes = "«",  }
 -- set.listchars = {eol = ' ', tab = ' ', trail = ' '}
-set.shortmess = set.shortmess + "c"
 
-vim.cmd([[
-  syntax on
-  syntax enable
-  filetype off
-  filetype plugin on
-]])
-vim.g.user_emmet_leader_key = ","
-vim.g.better_escape_shortcut='jj'
-vim.g.better_escape_interval = 200
+-- opt.whichwrap:append "<>[]hl"
 
-function _G.set_terminal_keymaps()
-	local opts = { noremap = true }
-	vim.api.nvim_buf_set_keymap(0, "t", "<esc>", [[<C-\><C-n>]], opts)
-	vim.api.nvim_buf_set_keymap(0, "t", "jk", [[<C-\><C-n>]], opts)
-	vim.api.nvim_buf_set_keymap(0, "t", "<C-h>", [[<C-\><C-n><C-W>h]], opts)
-	vim.api.nvim_buf_set_keymap(0, "t", "<C-j>", [[<C-\><C-n><C-W>j]], opts)
-	vim.api.nvim_buf_set_keymap(0, "t", "<C-k>", [[<C-\><C-n><C-W>k]], opts)
-	vim.api.nvim_buf_set_keymap(0, "t", "<C-l>", [[<C-\><C-n><C-W>l]], opts)
+-- vim.cmd([[
+--   syntax on
+--   syntax enable
+--   filetype off
+--   filetype plugin on
+-- ]])
+
+
+-- disable some builtin vim plugins
+local default_plugins = {
+  "2html_plugin",
+  "getscript",
+  "getscriptPlugin",
+  "gzip",
+  "logipat",
+  "netrw",
+  "netrwPlugin",
+  "netrwSettings",
+  "netrwFileHandlers",
+  "matchit",
+  "tar",
+  "tarPlugin",
+  "rrhelper",
+  "spellfile_plugin",
+  "vimball",
+  "vimballPlugin",
+  "zip",
+  "zipPlugin",
+  "tutor",
+  "rplugin",
+  "syntax",
+  "synmenu",
+  "optwin",
+  "compiler",
+  "bugreport",
+  "ftplugin",
+}
+
+for _, plugin in pairs(default_plugins) do
+  g["loaded_" .. plugin] = 1
 end
 
-vim.cmd([[
-  autocmd! TermOpen term://*toggleterm#* lua set_terminal_keymaps()
-]])
-vim.cmd([[
-  autocmd! FileType * set formatoptions-=cro
-  autocmd BufRead,BufNewFile *.ts,*.tsx,*.js,*jsx  setlocal tabstop=2 shiftwidth=2 softtabstop=2
-]])
 
+local default_providers = {
+  "node",
+  "perl",
+  "python3",
+  "ruby",
+}
+
+for _, provider in ipairs(default_providers) do
+  g["loaded_" .. provider .. "_provider"] = 0
+end

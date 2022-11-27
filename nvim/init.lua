@@ -26,12 +26,10 @@ for _, source in ipairs({
 	"configs.indent-o-matic-config",
 	"configs.lightspeed-config",
 	"configs.null-ls-config",
-	"configs.nvim-lsp-installer",
+	"configs.mason-config",
 	"configs.comment",
-	"configs.twilight-config", 
-	"configs.zenmode-config", 
-	-- "configs.rest-config", 
-	"configs.better-escape-config", 
+	"configs.zenmode-config",
+	"configs.better-escape-config",
 }) do
 	local status_ok, fault = pcall(require, source)
 	if not status_ok then

@@ -55,7 +55,6 @@ map("n", "<leader>th", ":ToggleTerm direction=horizontal<CR>", opts)
 map("n", "<leader>tv", ":ToggleTerm direction=vertical<CR>", opts)
 -- formatter
 map("n", "<leader>pp", ":lua vim.lsp.buf.format()<CR>", opts)
-vim.lsp.buf.format({ async = true })
 
 -- buffer
 map("n", "<leader>bd", ":bdelete<CR>", opts)
@@ -63,15 +62,15 @@ map("n", "<leader>bn", ":bnext<CR>", opts)
 map("n", "<leader>bp", ":bprevious<CR>", opts)
 
 -- vim git fugitive
-map("n", "<leader>ga", ":Git add %<CR>", opts)
-map("n", "<leader>gA", ":Git add .<CR>", opts)
-map("n", "<leader>gr", ":Git restore --staged %<CR>", opts)
-map("n", "<leader>gR", ":Git restore --staged %<CR>", opts)
-map("n", "<leader>gc", ":Git commit <CR>", opts)
+-- map("n", "<leader>ga", ":Git add %<CR>", opts)
+-- map("n", "<leader>gA", ":Git add .<CR>", opts)
+-- map("n", "<leader>gr", ":Git restore --staged %<CR>", opts)
+-- map("n", "<leader>gR", ":Git restore --staged %<CR>", opts)
+-- map("n", "<leader>gc", ":Git commit <CR>", opts)
 map("n", "<leader>gs", ":G <CR>", opts)
-map("n", "<leader>gp", ":Git push <CR>", opts)
-map("n", "<leader>gb", ":Git blame<CR>", opts)
-map("n", "<leader>gl", ":Git log<CR>", opts)
+-- map("n", "<leader>gp", ":Git push <CR>", opts)
+-- map("n", "<leader>gb", ":Git blame<CR>", opts)
+-- map("n", "<leader>gl", ":Git log<CR>", opts)
 
 -- Twilight
 -- map("n", "<leader>tw", ":Twilight<CR>", opts)

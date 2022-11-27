@@ -15,9 +15,9 @@ treesitter.setup({
 	--ignore_install = { "php", "phpdoc" },
 	sync_install = false,
 	auto_install = true,
-	indent = {
-		enabled = true,
-	},
+	-- indent = {
+	-- 	enabled = true,
+	-- },
 	highlight = {
 		enable = true,
 		use_languagetree = true,

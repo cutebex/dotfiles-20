@@ -16,9 +16,6 @@ return require("packer").startup(function()
 			"kyazdani42/nvim-web-devicons", -- optional, for file icons
 		},
 	})
-	-- use({ "NTBBloodbath/rest.nvim", requires = {
-	-- 	"nvim-lua/plenary.nvim",
-	-- } })
 	-- use({
 	-- 	"nvim-neo-tree/neo-tree.nvim",
 	-- 	branch = "v2.x",
@@ -37,6 +34,7 @@ return require("packer").startup(function()
 	use("Darazaki/indent-o-matic") --intelligent indent detection based on filetype
 	use("lukas-reineke/indent-blankline.nvim") -- block lines
 	use("numToStr/Comment.nvim") -- comment integration
+	use("JoosepAlviste/nvim-ts-context-commentstring")
 
 	-- Utils
 	use({ "jdhao/better-escape.vim", event = "InsertEnter" })
@@ -51,22 +49,15 @@ return require("packer").startup(function()
 	use("tpope/vim-fugitive") --git integration
 	use("folke/zen-mode.nvim") -- Zenmode
 	-- use("folke/twilight.nvim") -- dims inactive portions of code
-	use({
-		"iamcco/markdown-preview.nvim",
-		run = function()
-			vim.fn["mkdp#util#install"]()
-		end,
-	})
 
 	-- LSP
-	use("williamboman/nvim-lsp-installer")
 	use("neovim/nvim-lspconfig") -- Configurations for Nvim LSP
 	use("jose-elias-alvarez/nvim-lsp-ts-utils")
 	use({
 		"glepnir/lspsaga.nvim",
 		branch = "main",
 	})
-	use({"jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim" },}) --plugin for formatting
+	use({ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim" } }) --plugin for formatting
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
 
@@ -74,7 +65,7 @@ return require("packer").startup(function()
 	use("hrsh7th/nvim-cmp") -- Autocompletion plugin
 	use("hrsh7th/cmp-buffer") --cmp buffer source
 	use("hrsh7th/cmp-nvim-lsp") -- LSP source for nvim-cmp
-	use("saadparwaiz1/cmp_luasnip") -- Snippets source for nvim-cmp
-	use("L3MON4D3/LuaSnip") -- Snippets plugin
+	use("hrsh7th/cmp-vsnip") -- LSP source for nvim-cmp
+	use("hrsh7th/vim-vsnip") -- LSP source for nvim-cmp
 	use("onsails/lspkind.nvim") -- icons on completion like vscode
 end)

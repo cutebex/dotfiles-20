@@ -1,20 +1,6 @@
 local lsp_ok, lspconfig = pcall(require, "lspconfig")
 local cmp_ok, cmp_cap = pcall(require, "cmp_nvim_lsp")
 local aerial_ok, aerial = pcall(require, "aerial")
-local status, mason = pcall(require, "mason")
-if not status then
-	return
-end
-local status2, masonconfig = pcall(require, "mason-lspconfig")
-if not status2 then
-	return
-end
-
-mason.setup({})
-
-masonconfig.setup({
-	ensure_installed = { "sumneko_lua", "tailwindcss"},
-})
 
 if not lsp_ok then
 	return
@@ -29,14 +15,15 @@ end
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, opts)
--- vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
--- vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
 vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, opts)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-	client.resolved_capabilities.document_formatting = true
+	-- client.resolved_capabilities.document_formatting = true
+	client.server_capabilities.documentFormattingProvider = true
 	-- Enable completion triggered by <c-x><c-o>
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
@@ -51,7 +38,7 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
 	-- vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
 	vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, bufopts)
-	--vim.keymap.set("n", "<leader>pp", vim.lsp.buf.formatting_sync, bufopts)
+	vim.keymap.set("n", "<leader>pp", vim.lsp.buf.format(), bufopts)
 end
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -137,6 +124,7 @@ lspconfig["tsserver"].setup({
 		vim.keymap.set("n", "<leader>gi", vim.lsp.buf.implementation, bufopts)
 		vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, bufopts)
 		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
+		-- vim.keymap.set("n", "<leader>pp", vim.lsp.buf.format(), bufopts)
 		vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, bufopts)
 		
 		vim.api.nvim_buf_set_keymap(bufnr, "n", "tgs", ":TSLspOrganize<CR>", opts)

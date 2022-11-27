@@ -4,17 +4,27 @@ if not status_ok then
 end
 
 Indent.setup({
-	-- The values indicated here are the defaults
-
-	-- Number of lines without indentation before giving up (use -1 for infinite)
 	max_lines = 2048,
-
-	-- Space indentations that should be detected
-	standard_widths = { 2, 4, 8 },
-
-	-- Skip multi-line comments and strings (more accurate detection but less performant)
-	skip_multiline = true,
+	standard_widths = { 2, 4 },
+	filetype_python = {
+		standard_widths = { 4 },
+	},
+	filetype_rust = {
+		standard_widths = { 4 },
+	},
+	filetype_javascriptreact = {
+		standard_widths = { 2 },
+	},
+	filetype_typescriptreact = {
+		standard_widths = { 2 },
+	},
+	filetype_javascript = {
+		standard_widths = { 2 },
+	},
+	filetype_typescript = {
+		standard_widths = { 2 },
+	},
 	filetype_ = {
 		standard_widths = { 2 },
-	}
+	},
 })
