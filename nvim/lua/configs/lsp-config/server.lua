@@ -1,14 +1,10 @@
 local lsp_ok, lspconfig = pcall(require, "lspconfig")
 local cmp_ok, cmp_cap = pcall(require, "cmp_nvim_lsp")
-local aerial_ok, aerial = pcall(require, "aerial")
 
 if not lsp_ok then
 	return
 end
 if not cmp_ok then
-	return
-end
-if not aerial_ok then
 	return
 end
 -- Mappings.
@@ -71,6 +67,16 @@ lspconfig["solargraph"].setup({
 	flags = lsp_flags,
 })
 
+-- lspconfig["dartls"].setup({
+-- 	capabilities = capabilities,
+-- 	flags = lsp_flags,
+-- 	closingLabels = true,
+-- 	flutterOutline = true,
+-- 	onlyAnalyzeProjectsWithOpenFiles = true,
+-- 	outline = true,
+-- 	suggestFromUnimportedLibraries = true,
+-- })
+
 lspconfig["tsserver"].setup({
 	capabilities = capabilities,
 
@@ -117,22 +123,19 @@ lspconfig["tsserver"].setup({
 
 		-- no default maps, so you may want to define some here
 		local opts = { silent = true }
-		
+
 		local bufopts = { noremap = true, silent = true, buffer = bufnr }
-		
+
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
 		vim.keymap.set("n", "<leader>gi", vim.lsp.buf.implementation, bufopts)
 		vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, bufopts)
 		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
 		-- vim.keymap.set("n", "<leader>pp", vim.lsp.buf.format(), bufopts)
 		vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, bufopts)
-		
+
 		vim.api.nvim_buf_set_keymap(bufnr, "n", "tgs", ":TSLspOrganize<CR>", opts)
 		vim.api.nvim_buf_set_keymap(bufnr, "n", "tgr", ":TSLspRenameFile<CR>", opts)
 		vim.api.nvim_buf_set_keymap(bufnr, "n", "tgi", ":TSLspImportAll<CR>", opts)
 	end,
 })
 lspconfig["tailwindcss"].setup({})
-lspconfig.vimls.setup({
-	on_attach = aerial.on_attach,
-})

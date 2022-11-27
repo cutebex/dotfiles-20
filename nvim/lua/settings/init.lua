@@ -80,12 +80,12 @@ opt.mouse = "a"
 
 -- opt.whichwrap:append "<>[]hl"
 
--- vim.cmd([[
---   syntax on
---   syntax enable
---   filetype off
---   filetype plugin on
--- ]])
+vim.cmd([[
+  syntax on
+  syntax enable
+  filetype off
+  filetype plugin on
+]])
 
 
 -- disable some builtin vim plugins
@@ -128,6 +128,7 @@ local default_providers = {
   "perl",
   "python3",
   "ruby",
+  "dart"
 }
 
 for _, provider in ipairs(default_providers) do

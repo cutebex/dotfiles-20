@@ -17,6 +17,7 @@ map("n", "<leader>fo", ":Telescope oldfiles<CR>", opts) -- search history
 map("n", "<leader>fC", ":Telescope grep_string<CR>", opts) -- search under cursor
 map("n", "<leader>fk", ":Telescope keymaps<CR>", opts) -- search key maps
 map("n", "<leader>fM", ":Telescope commands<CR>", opts) -- search key maps
+map("n", "<leader>ft", ":Telescope flutter commands<CR>", opts) -- search key maps
 
 -- split
 map("n", "<C-S-Left>", ":vertical resize +15<CR>", opts)
@@ -55,6 +56,7 @@ map("n", "<leader>th", ":ToggleTerm direction=horizontal<CR>", opts)
 map("n", "<leader>tv", ":ToggleTerm direction=vertical<CR>", opts)
 -- formatter
 map("n", "<leader>pp", ":lua vim.lsp.buf.format()<CR>", opts)
+map("n", "<leader>gd", ":lua vim.lsp.buf.definition()<CR>", opts)
 
 -- buffer
 map("n", "<leader>bd", ":bdelete<CR>", opts)

@@ -29,7 +29,7 @@ saga.init_lsp_saga({
 	-- preview lines of lsp_finder and definition preview
 	max_preview_lines = 10,
 	-- use emoji lightbulb in default
-	code_action_icon = "💡",
+	code_action_icon = "☀ ",
 	-- if true can press number to execute the codeaction in codeaction window
 	code_action_num_shortcut = true,
 	-- same as nvim-lightbulb but async
@@ -40,7 +40,7 @@ saga.init_lsp_saga({
 		sign = true,
 		update_time = 150,
 		sign_priority = 20,
-		virtual_text = true,
+		virtual_text = false,
 	},
 	-- finder icons
 	finder_icons = {
@@ -128,7 +128,7 @@ keymap("n", "gr", "<cmd>Lspsaga rename<CR>", { silent = true })
 -- you can edit the definition file in this flaotwindow
 -- also support open/vsplit/etc operation check definition_action_keys
 -- support tagstack C-t jump back
-keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
+keymap("n", "gp", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
 
 -- Show line diagnostics
 keymap("n", "<leader>cd", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })

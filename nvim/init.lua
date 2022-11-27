@@ -30,6 +30,8 @@ for _, source in ipairs({
 	"configs.comment",
 	"configs.zenmode-config",
 	"configs.better-escape-config",
+	"configs.telescope",
+	"configs.flutter",
 }) do
 	local status_ok, fault = pcall(require, source)
 	if not status_ok then

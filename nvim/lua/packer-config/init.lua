@@ -68,4 +68,8 @@ return require("packer").startup(function()
 	use("hrsh7th/cmp-vsnip") -- LSP source for nvim-cmp
 	use("hrsh7th/vim-vsnip") -- LSP source for nvim-cmp
 	use("onsails/lspkind.nvim") -- icons on completion like vscode
+
+	-- flutter setup
+	use {'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim'}
+
 end)
