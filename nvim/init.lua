@@ -19,7 +19,7 @@ for _, source in ipairs({
 	"configs.autopair-config",
 	"configs.gitsign-config",
 	"configs.blank-line-config",
-	"configs.toggle-term-config",
+	-- "configs.toggle-term-config",
 	"configs.surround-config",
 	"configs.aerial-config",
 	"configs.colorizer-config",

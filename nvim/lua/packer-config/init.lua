@@ -7,6 +7,7 @@ return require("packer").startup(function()
 
 	-- Themings/icons/beautify/Customizing
 	use("EdenEast/nightfox.nvim") -- theme
+	use("folke/tokyonight.nvim")
 	use("kyazdani42/nvim-web-devicons") -- optional, for file icon
 	use("nvim-lualine/lualine.nvim") --lualine/statusbar
 	use("norcalli/nvim-colorizer.lua") -- show colors on live based on color codes
@@ -48,7 +49,7 @@ return require("packer").startup(function()
 	use("ggandor/lightspeed.nvim") -- search tool
 	use("lewis6991/gitsigns.nvim") -- git signs on signcolumn
 	use("seblj/nvim-tabline") -- enable tabs
-	use({ "akinsho/toggleterm.nvim", tag = "*" }) -- toggle term
+	-- use({ "akinsho/toggleterm.nvim", tag = "*" }) -- toggle term
 	use({ "nvim-telescope/telescope.nvim", requires = { { "nvim-lua/plenary.nvim" } } }) --project wise search
 	use("ur4ltz/surround.nvim") -- surrounding , parenthesis, brackets, quotes etc
 	use("stevearc/aerial.nvim") -- code outline plugin, handy in large files
@@ -67,6 +68,12 @@ return require("packer").startup(function()
 		event = "BufReadPre",
 		config = function()
 			require("marks").setup({})
+		end,
+	})
+	use({
+		"rmagatti/auto-session",
+		config = function()
+			require("auto-session").setup()
 		end,
 	})
 

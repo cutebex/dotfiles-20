@@ -12,4 +12,6 @@ tabline.setup({
 	right_separator = false, -- Show right separator on the last tab
 	show_index = false, -- Shows the index of tab before filename
 	show_icon = true, -- Shows the devicon
+	-- If lualine is installed tabline will use separators configured in lualine by default.
+	-- These options can be used to override those settings.
 })

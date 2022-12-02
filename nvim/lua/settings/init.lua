@@ -3,6 +3,8 @@
 local opt = vim.opt
 local g = vim.g
 
+g.t_Co=256
+
 g.mapleader = ","
 g.user_emmet_leader_key = ","
 g.better_escape_shortcut = "jj"

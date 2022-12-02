@@ -65,7 +65,7 @@ treesitter.setup({
 			enable = true,
 			set_jumps = true, -- whether to set jumps in the jumplist
 			goto_next_start = {
-				["<leader>k"] = "@function.outer",
+				["<leader>j"] = "@function.outer",
 				["]]"] = { query = "@class.outer", desc = "Next class start" },
 			},
 			goto_next_end = {
@@ -73,7 +73,7 @@ treesitter.setup({
 				["]["] = "@class.outer",
 			},
 			goto_previous_start = {
-				["<leader>j"] = "@function.outer",
+				["<leader>k"] = "@function.outer",
 				["[["] = "@class.outer",
 			},
 			goto_previous_end = {

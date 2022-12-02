@@ -38,6 +38,9 @@ telescope.setup({
 		},
 	},
 	pickers = {
+		colorscheme = {
+			enable_preview = true,
+		},
 		live_grep = {
 			theme = "ivy",
 			hidden = false,

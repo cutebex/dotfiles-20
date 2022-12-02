@@ -18,6 +18,7 @@ map("n", "<leader>fC", ":Telescope grep_string<CR>", opts) -- search under curso
 map("n", "<leader>fk", ":Telescope keymaps<CR>", opts) -- search key maps
 map("n", "<leader>fM", ":Telescope commands<CR>", opts) -- search all commands
 map("n", "<leader>ft", ":Telescope flutter commands<CR>", opts) -- flutter commands
+map("n", "<leader>fv", ":Telescope colorscheme<CR>", opts) -- colorscheme
 map("n", "<leader>fn", ":Telescope neoclip<CR>", opts) -- neoclip
 
 -- split
@@ -52,9 +53,9 @@ map("n", "<leader>r", ":luafile %<CR>", opts)
 map("n", "<leader>ps", ":PackerSync<CR>", opts)
 -- toggle term
 --
-map("n", "<leader>tt", ":ToggleTerm direction=float<CR>", opts)
-map("n", "<leader>th", ":ToggleTerm direction=horizontal<CR>", opts)
-map("n", "<leader>tv", ":ToggleTerm direction=vertical<CR>", opts)
+-- map("n", "<leader>tt", ":ToggleTerm direction=float<CR>", opts)
+-- map("n", "<leader>th", ":ToggleTerm direction=horizontal<CR>", opts)
+-- map("n", "<leader>tv", ":ToggleTerm direction=vertical<CR>", opts)
 -- formatter
 map("n", "<leader>pp", ":lua vim.lsp.buf.format()<CR>", opts)
 map("n", "<leader>gd", ":lua vim.lsp.buf.definition()<CR>", opts)

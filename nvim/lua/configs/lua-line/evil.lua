@@ -3,7 +3,7 @@ if not status_ok then
 	return
 end
 local colors = {
-	bg = "#081633",
+	bg = "#212123",
 	fg = "#bbc2cf",
 	yellow = "#ECBE7B",
 	cyan = "#008080",

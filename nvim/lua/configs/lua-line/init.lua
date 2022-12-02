@@ -5,7 +5,7 @@ end
 lualine.setup({
 	options = {
 		globalstatus = true,
-		theme = "nordfox",
+		theme = "tokyonight",
 		always_divide_middle = true,
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "," },
